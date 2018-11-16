@@ -1,0 +1,101 @@
+.wrap {
+    margin-top: 150px;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+  }
+  .cube {
+    margin: auto;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    transform-style: preserve-3d;
+  }
+  
+  .cube > div {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    background-color: #000;
+    border: solid 1px #eeeeee;
+    color: #ffffff;
+  }
+  .front {
+    transform: translateZ(100px);
+    background-image: url('./../../assets/angular.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 80%;
+    height: 100%;
+  }
+  
+  .back {
+    transform: translateZ(-100px) rotateY(180deg);
+    background-image: url('./../../assets/mangodb.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 80%;
+    height: 100%;
+  }
+  
+  .right {
+    transform: rotateY(-270deg) translateX(100px);
+    transform-origin: top right;
+    background-image: url('./../../assets/html.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 80%;
+    height: 100%;
+  }
+  
+  .left {
+    transform: rotateY(270deg) translateX(-100px);
+    transform-origin: center left;
+    background-image: url('./../../assets/java.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 80%;
+    height: 100%;
+
+  }
+  
+  .top {
+    transform: rotateX(-270deg) translateY(-100px);
+    transform-origin: top center;
+    background-image: url('./../../assets/html.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 80%;
+    height: 100%;
+  }
+  
+  .bottom {
+    transform: rotateX(270deg) translateY(100px);
+    transform-origin: bottom center;
+    background-image: url('./../../assets/angular.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 80%;
+    height: 100%;
+  }
+  @keyframes rotate {
+    from {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    
+    to {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+  
+  .cube {
+    animation: rotate 20s infinite linear;
+  }
